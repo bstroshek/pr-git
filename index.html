@@ -7,7 +7,6 @@
     <!-- подключаем шрифт Bitter с ресурса fonts.googleapis.com -->
     <link rel="stylesheet" href="style.css">
     
-    
 </head>
 <body>
     <div class="container">
@@ -17,7 +16,7 @@
                 <p>Change theme:</p>
                 <div class="theme-switch">
                     <div><input type="radio" name="styler" onclick="changeStyle(1)"/> Light</div>
-                    <div><input type="radio" name="styler" onclick="changeStyle(2)"/> Dark </div>
+                    <div><input type="radio" name="styler" id="dark_theme" onclick="changeStyle(2)"/> Dark </div>
                 </div>
             
             </div>
@@ -97,6 +96,14 @@
         styleLink.href = "style" + num + ".css"
         styleLink.rel = "stylesheet"
         document.head.appendChild(styleLink)
+        
+        let dark = document.getElementById("dark_theme")
+        console.log("dark_theme")
+          if (dark.value == checked) {
+              console.log("checked")
+              localStorage.setItem('area', areaVal.value)
+          }
+          
     }
     </script>
 </body>
