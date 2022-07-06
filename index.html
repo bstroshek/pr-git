@@ -87,5 +87,16 @@
             <p>&copy; 2020</p>
         </footer>
     </div>
+    
+    <script>
+      function changeStyle(num) {
+        var styleLink = document.getElementsByTagName('LINK')[0];
+        document.head.removeChild(styleLink);
+        styleLink = document.createElement('LINK')
+        styleLink.href = "style" + num + ".css"
+        styleLink.rel = "stylesheet"
+        document.head.appendChild(styleLink)
+    }
+    </script>
 </body>
 </html>
