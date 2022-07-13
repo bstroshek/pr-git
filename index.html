@@ -95,16 +95,17 @@
         styleLink = document.createElement('LINK')
         styleLink.href = "style" + num + ".css"
         styleLink.rel = "stylesheet"
+        localStorage.setItem('theme', styleLink.href)
         document.head.appendChild(styleLink)
-        
-        let dark = document.getElementById("dark_theme")
-        console.log("dark_theme")
-          if (dark.value == checked) {
-              console.log("checked")
-              localStorage.setItem('area', areaVal.value)
-          }
-          
     }
+
+    window.onload = function() {
+        if (localStorage['theme']) {
+            var styleLink = document.getElementsByTagName('LINK')[0];
+            styleLink.href = localStorage['theme']
+        }
+    }
+
     </script>
 </body>
 </html>
